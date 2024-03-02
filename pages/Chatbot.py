@@ -34,3 +34,4 @@ if prompt := st.chat_input("How can I help you?"):
         response = st.write_stream(getResponseFromModel("Asdf"))
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
+    
