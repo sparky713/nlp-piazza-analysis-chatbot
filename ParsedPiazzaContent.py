@@ -8,6 +8,7 @@ import pandas as pd
 import json
 import re
 
+
 # read the csv file into a dataframe
 df = pd.read_csv('output_json.csv')
 # subtable 1 for history
