@@ -2,6 +2,7 @@ import time
 import random
 
 def getPosts(topic):
+    # TODO: get the post numbers that match topic
     # Dummy function to get breeds based on the selected animal
     if topic == "Natural Recursion":
         return ["Labrador Retriever", "German Shepherd", "Golden Retriever"]

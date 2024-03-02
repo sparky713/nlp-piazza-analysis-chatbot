@@ -3,26 +3,26 @@ import pandas as pd
 import numpy as np
 from helpers import getPosts
 
+# # Checkbox to toggle day/night mode
+# dark_mode = st.checkbox("Dark Mode")
+
 #=============================================================================
 # Upload Dataset Section
 #=============================================================================
 st.subheader("Upload Dataset")
-
 # display file input button
-uploaded_file = st.file_uploader("Choose a file", type="json")
-
-# display an error message if the file is not JSON
-if uploaded_file is not None:
-    if not uploaded_file.name.endswith('.json'):
-        st.error("Please upload a JSON file.")
+uploaded_file = st.file_uploader("Choose a file", type="csv")
 st.divider()
+
 
 #=============================================================================
 # Topics & Questions Section
 #=============================================================================
+ # TODO: get topics from data
 #-------------------
 # Select Topics
 #-------------------
+ # TODO: filter based on selected data
 options = st.multiselect(
     'Topics',
     ['Natural Recursion', 'Function Composition', 'Template Tags', 'Graphs'],
@@ -36,14 +36,13 @@ topics = ["office hours", "Natural Recursion", "template", "midterm", "final exa
 # setup the columns
 topicsCol, postNumsCol = st.columns(2)
 topicsCol.subheader("Most Frequent Topics:")
-# postNumsCol.subheader("Posts:")
 
 selectedTopic = topicsCol.radio("Select to view posts", topics)
 postNums = getPosts(selectedTopic)
 postNumsCol.subheader(f"Posts on {selectedTopic}:")
-# postNumsCol.write(breeds)
 for postNum in postNums:
     postNumsCol.write(postNum)
+
 
 st.write("") # blank space
 
