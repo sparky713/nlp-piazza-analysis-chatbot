@@ -16,6 +16,8 @@ def getPosts(topic):
     else:
         return []
 
+def getKeywords():
+    hi = 1
 
 #-----------------------------------------------------------------------------
 # Send question from front-end to llama2, retrieving the response and returning it
