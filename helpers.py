@@ -1,5 +1,6 @@
 import time
 import random
+import boto3
 
 def getPosts(topic):
     # TODO: get the post numbers that match topic
@@ -20,14 +21,15 @@ def getPosts(topic):
 # Send question from front-end to llama2, retrieving the response and returning it
 #-----------------------------------------------------------------------------
 def getResponseFromModel(question):
-    response = random.choice(
-        [
-            "hello sally why are you stinky?",
-            "sally is so stinky",
-            "sally is a poo",
-            "jiguneun pyeongpyeonghada"
-        ]
-    )
+    client = boto3.client('bedrock')
+    # response = random.choice(
+    #     [
+    #         "hello sally why are you stinky?",
+    #         "sally is so stinky",
+    #         "sally is a poo",
+    #         "jiguneun pyeongpyeonghada"
+    #     ]
+    # )
     for word in response.split():
         yield word + " "
         time.sleep(0.1)
