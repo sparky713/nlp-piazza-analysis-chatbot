@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import subprocess
 import platform
+import random
+import time
+
 
 # st.write("Hello world")
 
@@ -11,6 +14,11 @@ import platform
 # })
 
 # df
+#=============================================================================
+# Sidebar
+#=============================================================================
+# Using object notation
+# st.page_link("pages/chatbot.py", label="Home", icon="🏠")
 
 #=============================================================================
 # Upload Dataset Section
@@ -22,7 +30,6 @@ uploaded_file = st.file_uploader("Choose a file")
 # Display filename if a file is uploaded
 if uploaded_file is not None:
     st.write("Selected file:", uploaded_file.name)
-
 
 #=============================================================================
 # Topics & Questions Section
