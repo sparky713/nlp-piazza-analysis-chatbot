@@ -5,23 +5,9 @@ import platform
 import random
 import time
 
+from helpers import getResponseFromModel
 #=============================================================================
-# HELPER FUNCTIONS
-#=============================================================================
-def getResponseFromModel(question):
-    response = random.choice(
-        [
-            "Hello there! How can I assist you today?",
-            "Hi, human! Is there anything I can help you with?",
-            "Do you need help?",
-        ]
-    )
-    for word in response.split():
-        yield word + " "
-        time.sleep(0.1)
-
-#=============================================================================
-# Chatbot Section
+# Chatbot Page
 #=============================================================================
 
 st.subheader("Chatbot")
