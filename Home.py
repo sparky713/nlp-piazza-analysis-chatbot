@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 # from helpers import getPosts
 from helpers import uploadFileToS3
+from helpers import parseCsv
 from classification.analytics import analyzeData
 
 # # Checkbox to toggle day/night mode
@@ -14,7 +15,9 @@ from classification.analytics import analyzeData
 st.subheader("Upload Dataset")
 # display file input button
 uploaded_file = st.file_uploader("Choose a file", type="csv")
-uploadFileToS3(uploaded_file)
+parsed = parseCsv(uploaded_file)
+
+uploadFileToS3(parsed)
 # if uploaded_file:
 
 st.divider()
