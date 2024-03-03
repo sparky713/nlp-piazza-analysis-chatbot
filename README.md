@@ -1,4 +1,4 @@
-# classroom-insights
+# Piazza Pro
 
 ## Setup
 - Configure your AWS credentials locally
