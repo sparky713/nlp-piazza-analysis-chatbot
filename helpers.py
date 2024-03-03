@@ -47,9 +47,9 @@ def getResponseFromModel(question):
         'kmsKeyArn': 'arn:aws:kms:us-west-2:852069794117:key/8c816af9-92bc-4084-8db2-a27a83bb3d87'
     }
     )
-    
+
     text = response["output"]["text"]
-    print(text)
+    # print(text)
 
     return text
 

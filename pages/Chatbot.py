@@ -13,9 +13,14 @@ from helpers import getResponseFromModel
 
 st.subheader("Chatbot")
 
+
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+# Check if chat history is empty
+if st.session_state.messages == []:
+    st.write("Ask me anything and I'll answer your questions using data from Piazza!")
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
