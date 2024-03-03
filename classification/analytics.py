@@ -2,8 +2,10 @@ import pandas as pd
 
 
 def analyzeData():
-    topics = pd.read_csv("data/topic-terms.csv")
-    documents = pd.read_csv("data/doc-topics.csv")
+    # topics = pd.read_csv("data/topic-terms.csv")
+    topics = pd.read_csv("classification/data/topic-terms.csv")
+    # documents = pd.read_csv("data/doc-topics.csv")
+    documents = pd.read_csv("classification/data/doc-topics.csv")
 
     documents_filtered = documents[documents['proportion'] > 0.75]
     topic_dict = {"topic": [0,1,2,3,4,5,6,7,8,9],
