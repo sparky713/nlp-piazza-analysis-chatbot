@@ -1,6 +1,8 @@
 import time
 import random
 import boto3
+import logging
+import pandas as pd
 
 def getPosts(topic):
     # TODO: get the post numbers that match topic
@@ -56,4 +58,21 @@ def getResponseFromModel(question):
     # for word in response.split():
     #     yield word + " "
     #     time.sleep(0.1)
+
+def uploadFileToS3(file):
+    print("in upload file to s3")
+    # s3 = boto3.client('s3',
+    #               aws_access_key_id="ASIA4MY2RIFCTGK3TSXM",
+    #               aws_secret_access_key="z8jF19X0gvYBxGKtCIT2f4Lnumoj7HUFzCrUsidg")
+    s3 = boto3.client('s3')
+    try:
+        # Upload file to S3
+        # df = pd.read_csv(file)
+        s3.upload_fileobj(file, "piazzadata", "asdf")
+        return 'File uploaded successfully to S3!'
+        
+    except Exception as e:
+        logging.error(e)
+        return f'Error uploading file to S3: {e}'
+
         

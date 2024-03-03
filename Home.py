@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from helpers import getPosts
+from helpers import uploadFileToS3
 
 # # Checkbox to toggle day/night mode
 # dark_mode = st.checkbox("Dark Mode")
@@ -12,6 +13,10 @@ from helpers import getPosts
 st.subheader("Upload Dataset")
 # display file input button
 uploaded_file = st.file_uploader("Choose a file", type="csv")
+print("UPLOADING FILE TO S3")
+uploadFileToS3(uploaded_file)
+print("FILE UPLOADED TO S3")
+
 st.divider()
 
 
