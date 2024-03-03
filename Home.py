@@ -16,6 +16,7 @@ uploaded_file = st.file_uploader("Choose a file", type="csv")
 print("UPLOADING FILE TO S3")
 uploadFileToS3(uploaded_file)
 print("FILE UPLOADED TO S3")
+# if uploaded_file:
 
 st.divider()
 
@@ -45,7 +46,7 @@ topicsCol.subheader("Most Frequent Topics:")
 selectedTopic = topicsCol.radio("Select to view posts", topics)
 postNums = getPosts(selectedTopic)
 postNumsCol.subheader(f"Posts on {selectedTopic}:")
-for postNum in postNums:
+for postNum in postNums:g
     postNumsCol.write(postNum)
 
 
