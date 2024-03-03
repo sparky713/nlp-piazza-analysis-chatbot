@@ -4,6 +4,7 @@ import subprocess
 import platform
 import random
 import time
+import io
 
 from helpers import getResponseFromModel
 #=============================================================================
@@ -31,7 +32,7 @@ if prompt := st.chat_input("How can I help you?"):
     response = f"Piazza AI: {prompt}"
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        response = st.write_stream(getResponseFromModel("Asdf"))
+        response = st.write_stream(io.StringIO(getResponseFromModel(prompt)))
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
     
