@@ -68,7 +68,7 @@ def uploadFileToS3(file):
     try:
         # Upload file to S3
         # df = pd.read_csv(file)
-        s3.upload_fileobj(file, "piazzadata", "asdf")
+        s3.upload_fileobj(file, "piazzadata", "hello")
         return 'File uploaded successfully to S3!'
         
     except Exception as e:
