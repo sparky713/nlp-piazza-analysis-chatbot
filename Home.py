@@ -46,7 +46,7 @@ topicsCol.subheader("Most Frequent Topics:")
 selectedTopic = topicsCol.radio("Select to view posts", topics)
 postNums = getPosts(selectedTopic)
 postNumsCol.subheader(f"Posts on {selectedTopic}:")
-for postNum in postNums:g
+for postNum in postNums:
     postNumsCol.write(postNum)
 
 
