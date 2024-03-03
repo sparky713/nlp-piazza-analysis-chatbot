@@ -14,9 +14,7 @@ from classification.analytics import analyzeData
 st.subheader("Upload Dataset")
 # display file input button
 uploaded_file = st.file_uploader("Choose a file", type="csv")
-print("UPLOADING FILE TO S3")
 uploadFileToS3(uploaded_file)
-print("FILE UPLOADED TO S3")
 # if uploaded_file:
 
 st.divider()

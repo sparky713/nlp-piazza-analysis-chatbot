@@ -60,6 +60,8 @@ def getResponseFromModel(question):
     #     time.sleep(0.1)
 
 def uploadFileToS3(file):
+    if not file:
+        return
     print("in upload file to s3")
     # s3 = boto3.client('s3',
     #               aws_access_key_id="ASIA4MY2RIFCTGK3TSXM",
